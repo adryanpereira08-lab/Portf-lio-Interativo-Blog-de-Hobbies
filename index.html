@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Cantinho Digital | Hobbies & Projetos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">⚡ MeuEspaço.dev</div>
+      <button class="theme-btn" id="themeToggle">🌙 Modo Escuro</button>
+    </header>
+
+    <section class="hero">
+      <div class="avatar">🎨</div>
+      <h1>Olá, eu sou o Alex!</h1>
+      <p>Desenvolvedor nas horas vagas, entusiasta de jogos indie, leitor compulsivo e aspirante a fotógrafo.</p>
+    </section>
+
+    <section class="interactive-widget">
+      <h3>🎲 Sem ideia do que explorar hoje?</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">Clique no botão para receber uma dica rápida de hobby do dia!</p>
+      <button id="suggestBtn">Sortear Recomendação</button>
+      <div id="recommendation-text"></div>
+    </section>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="jogos">🎮 Jogos</button>
+      <button class="filter-btn" data-filter="leitura">📚 Leitura</button>
+      <button class="filter-btn" data-filter="criatividade">🎨 Criatividade</button>
+    </div>
+
+    <main class="grid" id="cardGrid">
+      
+      <article class="card" data-category="jogos" onclick="openModal('Hollow Knight', 'Minhas impressões sobre a ambientação e gameplay do jogo indie Hollow Knight.', '🎮 Jogos')">
+        <div class="card-banner" style="background: #3b82f622;">🗡️</div>
+        <div class="card-body">
+          <span class="tag">🎮 Jogos</span>
+          <h3 class="card-title">Análise: Hollow Knight</h3>
+          <p class="card-desc">Por que esse metroidvania se tornou meu jogo favorito de todos os tempos.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="leitura" onclick="openModal('Duna - Frank Herbert', 'Notas e citações marcantes da minha leitura da série de ficção científica Duna.', '📚 Leitura')">
+        <div class="card-banner" style="background: #f59e0b22;">🏜️</div>
+        <div class="card-body">
+          <span class="tag">📚 Leitura</span>
+          <h3 class="card-title">Resenha: Duna</h3>
+          <p class="card-desc">Construção de mundo épica e reflexões políticas que continuam atuais.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="criatividade" onclick="openModal('Pixel Art 16-bit', 'Coleção dos meus primeiros sprites criados no Aseprite para um projeto futuro.', '🎨 Criatividade')">
+        <div class="card-banner" style="background: #ec489922;">👾</div>
+        <div class="card-body">
+          <span class="tag">🎨 Criatividade</span>
+          <h3 class="card-title">Estudos em Pixel Art</h3>
+          <p class="card-desc">Aprender a desenhar com limitações de pixels e paletas reduzidas.</p>
+        </div>
+      </article>
+
+      <article class="card" data-category="jogos" onclick="openModal('Setup de Modding para Skyrim', 'Guia rápido de como organizei 150+ mods mantendo o jogo estável.', '🎮 Jogos')">
+        <div class="card-banner" style="background: #10b98122;">🐉</div>
+        <div class="card-body">
+          <span class="tag">🎮 Jogos</span>
+          <h3 class="card-title">Skyrim Modding 2026</h3>
+          <p class="card-desc">Transformando um clássico em um RPG com visual moderno.</p>
+        </div>
+      </article>
+
+    </main>
+
+    <footer>
+      <p>© 2026 • Feito com HTML, CSS e JS puro.</p>
+    </footer>
+  </div>
+
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <span class="tag" id="modalTag">Categoria</span>
+      <h2 id="modalTitle" style="margin: 10px 0;">Título</h2>
+      <p id="modalDesc" style="color: var(--text-muted);">Descrição completa...</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
